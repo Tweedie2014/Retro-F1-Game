@@ -127,4 +127,16 @@ public class TopDownCarController : MonoBehaviour
         accelerationInput = inputVector.y;
     }
 
+    public void ApplySpeedBoost1(float speedBoost)
+    {
+        Vector2 speedBoostVector = transform.up * speedBoost;
+        carRigidbody2D.AddForce(speedBoostVector, ForceMode2D.Force);
+    }
+
+    public void ApplySpeedBoost(float speedBoostFactor)
+    {
+        Vector2 speedBoostVector = transform.up * accelerationFactor * speedBoostFactor;
+        carRigidbody2D.AddForce(speedBoostVector, ForceMode2D.Force);
+    }
+
 }
